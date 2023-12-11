@@ -7,5 +7,4 @@ export class DipendenteService {
 
   constructor() { }
 
-  private getDipendenti() {}
 }
