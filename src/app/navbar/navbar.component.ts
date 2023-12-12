@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MatTabChangeEvent } from '@angular/material/tabs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,10 +15,12 @@ export class NavbarComponent implements OnInit {
   }
   
   //metodo per cambiare la router nel mat-tab-group utilizzando (selectedTabChange)
-  changeRoute( item: MatTabChangeEvent){
-    if (item.index === 0) {
+  changeRoute( idx: number){
+    console.log(idx);
+    
+    if (idx === 0) {
       this.goCompetenze();
-    }else if(item.index === 1){
+    }else{
       this.goDipendenti();
     }
   }

@@ -5,24 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
-import { RouterModule } from '@angular/router';
-import { CompetenzeComponent } from './competenze/competenze.component';
+// import { RouterModule } from '@angular/router';
+// import { CompetenzeComponent } from './competenze/competenze.component';
 import { SharedModule } from './shared/shared.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    RouterModule.forRoot([
-      { path: '', pathMatch: 'full', redirectTo: 'competenze' },
-      { path: 'competenze', component: CompetenzeComponent },
-    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
