@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from './shared/shared.module';
 import { CompetenzeComponent } from './competenze/competenze.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
