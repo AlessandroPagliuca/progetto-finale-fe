@@ -2,10 +2,12 @@
     <mat-toolbar>
         <span class="text-capitalize ">gestione competenze</span>
     </mat-toolbar>
-    <div class="text-capitalize container-fluid ps-5 py-4 bg-navbar-btn">
-        <button type="button" class="text-uppercase text-secondary fs-6 me-3 btn btn-outline-primary "
-            (click)="goCompetetnze()">competenze</button>
-        <button type="button" class="text-uppercase text-secondary fs-6 btn btn-outline-primary"
-            (click)="goDipendenti()">dipendenti</button>
+    <div class="text-capitalize container-fluid ps-5 bg-navbar-btn">
+        <mat-tab-group (selectedTabChange)="changeRoute($event)">
+            <mat-tab label="COMPETENZE"></mat-tab>
+            <mat-tab label="DIPENDENTI"></mat-tab>
+        </mat-tab-group>
     </div>
+
+
 </nav>
