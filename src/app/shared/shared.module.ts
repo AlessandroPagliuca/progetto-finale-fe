@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTabsModule} from '@angular/material/tabs';
  
 
 
@@ -11,11 +12,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   imports: [
     CommonModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTabsModule,
   ],
   exports:[
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTabsModule
 
     
   ]
