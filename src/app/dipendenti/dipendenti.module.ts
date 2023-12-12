@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { DipendentiComponent } from './dipendenti.component';
+import { DipendentiRoutingModule } from './dipendenti-routing.module';
 
 
 
@@ -11,7 +12,8 @@ import { DipendentiComponent } from './dipendenti.component';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    DipendentiRoutingModule
   ]
 })
 export class DipendentiModule { }
