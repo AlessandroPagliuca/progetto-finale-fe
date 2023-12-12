@@ -1,0 +1,85 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Competenza Column -->
+    <ng-container matColumnDef="competenza">
+      <th mat-header-cell *matHeaderCellDef> Competenza </th>
+      <td mat-cell *matCellDef="let element"> {{ element.competenza }} </td>
+    </ng-container>
+  
+    <!-- Ambito Column -->
+    <ng-container matColumnDef="ambito">
+      <th mat-header-cell *matHeaderCellDef> Ambito </th>
+      <td mat-cell *matCellDef="let element"> {{ element.ambito }} </td>
+    </ng-container>
+  
+    <!-- Numero di Risorse Column -->
+    <ng-container matColumnDef="numeroDiRisorse">
+      <th mat-header-cell *matHeaderCellDef> Numero di Risorse </th>
+      <td mat-cell *matCellDef="let element"> {{ element.numeroDiRisorse }} </td>
+    </ng-container>
+  
+    <!-- Livello Medio Column -->
+    <ng-container matColumnDef="livelloMedio">
+      <th mat-header-cell *matHeaderCellDef> Livello Medio </th>
+      <td mat-cell *matCellDef="let element"> {{ element.livelloMedio }} </td>
+    </ng-container>
+  
+    <!-- Progetti Column -->
+    <ng-container matColumnDef="progetti">
+      <th mat-header-cell *matHeaderCellDef> Progetti </th>
+      <td mat-cell *matCellDef="let element"> {{ element.progetti }} </td>
+    </ng-container>
+  
+    <!-- Risorse Disponibili Column -->
+    <ng-container matColumnDef="risorseDisponibili">
+      <th mat-header-cell *matHeaderCellDef> Risorse Disponibili </th>
+      <td mat-cell *matCellDef="let element"> {{ element.risorseDisponibili }} </td>
+
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Competenza Column -->
+    <ng-container matColumnDef="competenza">
+      <th mat-header-cell *matHeaderCellDef> Competenza </th>
+      <td mat-cell *matCellDef="let element"> {{ element.competenza }} </td>
+    </ng-container>
+  
+    <!-- Ambito Column -->
+    <ng-container matColumnDef="ambito">
+      <th mat-header-cell *matHeaderCellDef> Ambito </th>
+      <td mat-cell *matCellDef="let element"> {{ element.ambito }} </td>
+    </ng-container>
+  
+    <!-- Numero di Risorse Column -->
+    <ng-container matColumnDef="numeroDiRisorse">
+      <th mat-header-cell *matHeaderCellDef> Numero di Risorse </th>
+      <td mat-cell *matCellDef="let element"> {{ element.numeroDiRisorse }} </td>
+    </ng-container>
+  
+    <!-- Livello Medio Column -->
+    <ng-container matColumnDef="livelloMedio">
+      <th mat-header-cell *matHeaderCellDef> Livello Medio </th>
+      <td mat-cell *matCellDef="let element"> {{ element.livelloMedio }} </td>
+    </ng-container>
+  
+    <!-- Progetti Column -->
+    <ng-container matColumnDef="progetti">
+      <th mat-header-cell *matHeaderCellDef> Progetti </th>
+      <td mat-cell *matCellDef="let element"> {{ element.progetti }} </td>
+    </ng-container>
+  
+    <!-- Risorse Disponibili Column -->
+    <ng-container matColumnDef="risorseDisponibili">
+      <th mat-header-cell *matHeaderCellDef> Risorse Disponibili </th>
+      <td mat-cell *matCellDef="let element"> {{ element.risorseDisponibili }} </td>
+
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
