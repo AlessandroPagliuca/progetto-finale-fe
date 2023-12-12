@@ -1,9 +1,8 @@
 nav {
     background-color: #ffff;
-    //box-shadow: grey; DA MODIFICARE LO SHADOW
-
     .mat-toolbar {
         background-color: var(--primary-blue) !important;
+        color: #ffff;
     }
 
     /* Styles for tab labels */
@@ -15,11 +14,5 @@ nav {
     /* Styles for the active tab label */
     .mat-tab-label.mat-tab-label-active {
         color: var(--primary-blue);
-        text-decoration-line: var(--primary-blue);
-        /* Cambia il colore qui */
-    }
-
-    .mat-ink-bar {
-        background-color: #1f29a2 !important;
     }
 }
