@@ -9,11 +9,13 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     CompetenzeComponent,
+
   ],
   imports: [
     CommonModule,
+    SharedModule,
     CompetenzeRoutingModule,
-    SharedModule
+    
   ]
 })
 export class CompetenzeModule { }

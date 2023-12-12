@@ -59,6 +59,7 @@ export class CompetenzeComponent implements OnInit {
     'livelloMedio',
     'progetti',
     'risorseDisponibili',
+    'azioni'
   ];
 
   dataSource = new MatTableDataSource<ListaCompetenze>(ELEMENT_DATA);
