@@ -1,57 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-
-export interface ListaCompetenze {
-  competenza: string;
-  ambito: string;
-  numeroDiRisorse: number;
-  livelloMedio: number;
-  progetti: number;
-  risorseDisponibili: number;
-}
-
-const ELEMENT_DATA: ListaCompetenze[] = [
-  {
-    competenza:'Angular',
-    ambito:'Front end',
-    numeroDiRisorse:10,
-    livelloMedio:3,
-    progetti:5,
-    risorseDisponibili:8,
-  },
-  {
-    competenza:'Spring',
-    ambito:'Back end',
-    numeroDiRisorse:15,
-    livelloMedio:4,
-    progetti:8,
-    risorseDisponibili:12,
-  },
-  {
-  competenza:'Html',
-  ambito:'Front end',
-  numeroDiRisorse:5,
-  livelloMedio:2,
-  progetti:3,
-  risorseDisponibili:2,
-},
-{
-  competenza:'Pyton',
-  ambito:'Full stack',
-  numeroDiRisorse:5,
-  livelloMedio:2,
-  progetti:3,
-  risorseDisponibili:2,
-},
-
-];
-
+import { CompetenzeService } from '../services/competenze.service';
+import { Skill } from '../models/skill.model';
+import { switchMap } from 'rxjs';
 @Component({
   selector: 'app-competenze',
   templateUrl: './competenze.component.html',
   styleUrls: ['./competenze.component.scss'],
 })
 export class CompetenzeComponent implements OnInit {
+  public skills = new MatTableDataSource<Skill[]>()
   displayedColumns: string[] = [
     'competenza',
     'ambito',
@@ -61,9 +19,31 @@ export class CompetenzeComponent implements OnInit {
     'risorseDisponibili',
     'azioni'
   ];
-
-  dataSource = new MatTableDataSource<ListaCompetenze>(ELEMENT_DATA);
+  constructor(private compService: CompetenzeService) { }
 
   ngOnInit(): void {
+    this.findAll();
+  }
+  private findAll() {
+    this.compService.findAllSkills().subscribe({
+      next: (value: any) => {
+        this.skills = new MatTableDataSource<Skill[]>(value);
+      },
+      error: error => {
+        console.log(error);
+      },
+      complete() {
+        console.log('success');
+      },
+    })
+  }
+
+  public deleteSkill(deleteTodo: Skill) {
+    this.compService.deleteSkill(deleteTodo)
+      .pipe(switchMap(() => this.compService.findAllSkills()))
+      .subscribe((res: any) => {
+        // console.log('res', res);
+        this.skills = res;
+      })
   }
 }
