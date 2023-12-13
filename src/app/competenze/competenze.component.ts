@@ -3,6 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { CompetenzeService } from '../services/competenze.service';
 import { Skill } from '../models/skill.model';
 import { switchMap } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { ModaleComponent } from '../modale/modale.component';
 @Component({
   selector: 'app-competenze',
   templateUrl: './competenze.component.html',
@@ -19,7 +21,7 @@ export class CompetenzeComponent implements OnInit {
     'risorseDisponibili',
     'azioni'
   ];
-  constructor(private compService: CompetenzeService) { }
+  constructor(private compService: CompetenzeService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -45,5 +47,16 @@ export class CompetenzeComponent implements OnInit {
         // console.log('res', res);
         this.skills = res;
       })
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ModaleComponent, {
+      data: 'ciao',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+
+    });
   }
 }
